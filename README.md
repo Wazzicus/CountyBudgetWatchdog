@@ -73,19 +73,5 @@ The autonomous Gemini agent relies on three primary tools:
 
 A `Dockerfile` is provided in the `backend` directory for containerized deployment. 
 
-*(Note: I noticed you tried to run a gcloud deploy command in PowerShell that failed due to syntax. In PowerShell, the line continuation character is the backtick `` ` `` instead of the bash backslash `\`.)*
-
-To deploy the backend to Google Cloud Run using the `gcloud` CLI from the root directory in **PowerShell**, run:
-
-```powershell
-gcloud run deploy budget-watchdog-backend `
-    --source ./backend `
-    --region us-central1 `
-    --allow-unauthenticated `
-    --set-env-vars GEMINI_API_KEY="your_working_api_key_here"
-```
-
-Or, as a single line:
-```powershell
 gcloud run deploy budget-watchdog-backend --source ./backend --region us-central1 --allow-unauthenticated --set-env-vars GEMINI_API_KEY="your_working_api_key_here"
 ```
