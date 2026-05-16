@@ -13,7 +13,6 @@ This project uses a decoupled client-server architecture:
 The autonomous Gemini agent relies on three primary tools:
 1. `fetch_ward_allocation`: Simulates pulling granular budget row details for specific wards.
 2. `check_gazette_amendments`: Retrieves recent text amendments with explicit publication dates from the Kenya Gazette.
-3. `trigger_sms_alert`: Formats a webhook payload designed for SMS gateways (e.g., Africa's Talking) to notify users of critical updates.
 
 ## Getting Started
 
@@ -73,19 +72,5 @@ The autonomous Gemini agent relies on three primary tools:
 
 A `Dockerfile` is provided in the `backend` directory for containerized deployment. 
 
-*(Note: I noticed you tried to run a gcloud deploy command in PowerShell that failed due to syntax. In PowerShell, the line continuation character is the backtick `` ` `` instead of the bash backslash `\`.)*
-
-To deploy the backend to Google Cloud Run using the `gcloud` CLI from the root directory in **PowerShell**, run:
-
-```powershell
-gcloud run deploy budget-watchdog-backend `
-    --source ./backend `
-    --region us-central1 `
-    --allow-unauthenticated `
-    --set-env-vars GEMINI_API_KEY="your_working_api_key_here"
-```
-
-Or, as a single line:
-```powershell
 gcloud run deploy budget-watchdog-backend --source ./backend --region us-central1 --allow-unauthenticated --set-env-vars GEMINI_API_KEY="your_working_api_key_here"
 ```
