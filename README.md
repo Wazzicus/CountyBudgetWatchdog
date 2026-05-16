@@ -72,5 +72,6 @@ The autonomous Gemini agent relies on three primary tools:
 
 A `Dockerfile` is provided in the `backend` directory for containerized deployment. 
 
+```
 gcloud run deploy budget-watchdog-backend --source ./backend --region us-central1 --allow-unauthenticated --set-env-vars GEMINI_API_KEY="your_working_api_key_here"
 ```
