@@ -42,7 +42,8 @@ export default function Home() {
   }, []);
 
   const connectWebSocket = () => {
-    const ws = new WebSocket("ws://localhost:8000/ws/chat");
+    const productionUrl = "wss://countybudgetwatchdog-81214252020.europe-west1.run.app/ws/chat";
+    const ws = new WebSocket(productionUrl);
     wsRef.current = ws;
 
     ws.onopen = () => {
